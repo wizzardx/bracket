@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bracket - Safe Resource Management for Crystal</title>
+    <meta name="description" content="A Crystal shard implementing the bracket pattern for safe resource management, similar to Python's context managers or Haskell's bracket pattern.">
+    <meta name="keywords" content="crystal, resource management, bracket pattern, raii, context manager, crystal-shard">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        pre {
+            background: #f6f8fa;
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: monospace;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .links {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .links a {
+            margin: 0 10px;
+            color: #0366d6;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Bracket</h1>
+        <p>Safe Resource Management for Crystal</p>
+    </div>
+
+    <div class="links">
+        <a href="https://github.com/wizzardx/bracket">GitHub</a>
+        <a href="https://github.com/wizzardx/bracket#installation">Installation</a>
+        <a href="https://github.com/wizzardx/bracket#usage">Documentation</a>
+    </div>
+
+    <h2>About</h2>
+    <p>Bracket is a Crystal shard that implements the bracket pattern for safe resource management. This pattern ensures that resources are properly initialized and cleaned up, similar to Python's context managers or Haskell's bracket pattern.</p>
+
+    <h2>Features</h2>
+    <ul>
+        <li>Guarantees resource cleanup even if an exception occurs</li>
+        <li>Type-safe resource handling</li>
+        <li>Simple, functional interface</li>
+        <li>Works with any resource type</li>
+    </ul>
+
+    <h2>Quick Start</h2>
+    <pre><code># Add to shard.yml:
+dependencies:
+  bracket:
+    github: wizzardx/bracket
+
+# Basic usage:
+require "bracket"
+
+setup = -> { "my resource" }
+teardown = ->(resource : String) { puts "Cleaning up #{resource}"; nil }
+
+Bracket.with_resource(setup, teardown) do |resource|
+  puts "Using #{resource}"
+end</code></pre>
+
+    <div class="links">
+        <a href="https://github.com/wizzardx/bracket#contributing">Contributing</a>
+        <a href="https://github.com/wizzardx/bracket/issues">Issues</a>
+        <a href="https://github.com/wizzardx/bracket/releases">Releases</a>
+    </div>
+</body>
+</html>
