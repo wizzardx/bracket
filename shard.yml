@@ -1,0 +1,9 @@
+name: bracket
+version: 0.1.0
+
+authors:
+  - david <wizzardx@gmail.com>
+
+crystal: '>= 1.15.1'
+
+license: MIT
