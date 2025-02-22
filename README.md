@@ -1,6 +1,6 @@
 # bracket
 
-A Crystal shard that implements the bracket pattern for safe resource management. This pattern ensures that resources are properly initialized and cleaned up, similar to Python's context managers or Haskell's bracket pattern.
+A Crystal shard that implements the bracket pattern for safe resource management. This pattern, similar to Python's context managers, Rust's RAII, or Haskell's bracket pattern, ensures that resources are properly initialized and cleaned up even when exceptions occur. Useful for managing file handles, network connections, database transactions, or any resource that needs guaranteed cleanup.
 
 ## Installation
 
